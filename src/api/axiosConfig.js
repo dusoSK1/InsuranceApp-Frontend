@@ -1,13 +1,12 @@
 import axios from 'axios';
-//Base url from environment variable or default to localhost
-const API_URL = process.env.REACT_APP_API_URL || "https://corsfix.com/proxy/https://insuranceapp-backend-latest.onrender.com/";
 
+// Teraz voláme len relatívnu URL, proxy sa postará o presmerovanie
 const api = axios.create({
-    baseURL: API_URL,
-    headers: {
-        "Content-Type": "application/json"
-    },
-    withCredentials: true
+  baseURL: '/api', // Netlify presmeruje na Render backend
+  headers: {
+    "Content-Type": "application/json"
+  },
+  withCredentials: true
 });
 
 export default api;
