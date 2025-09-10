@@ -13,7 +13,7 @@ export default function Insured() {
 
   const fetchPolicies = async () => {
     try {
-      const res = await api.get("/insurances", { withCredentials: true });
+      const res = await api.get("api/insurances", { withCredentials: true });
       setPolicies(res.data);
     } catch (err) {
       console.error(err);

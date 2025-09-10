@@ -24,7 +24,7 @@ export default function Login({ setLoggedInUser }) {
 
     try {
       setLoading(true);
-      const response = await api.post("/users/login", { email, password }, { withCredentials: true });
+      const response = await api.post("api/users/login", { email, password }, { withCredentials: true });
 
       if (response.status === 200) {
         setLoggedInUser(response.data);

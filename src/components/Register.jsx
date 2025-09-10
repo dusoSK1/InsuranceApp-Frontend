@@ -30,7 +30,7 @@ export default function Register() {
 
     try {
       setLoading(true);
-      const response = await api.post("/users/register", { email, password }, { withCredentials: true });
+      const response = await api.post("api/users/register", { email, password }, { withCredentials: true });
 
       if (response.status === 200) {
         toast.success("Registration successful!");
